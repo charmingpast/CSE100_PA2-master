@@ -58,17 +58,21 @@ public:
         BSTNode<Data>* current = root;
         while (current != 0) {
             pcurrent = current;
-            if (item == current->data) {
-                cout<<"Can't not insert, Duplicate items"<<endl;
-                return 0;
-            }
+            
             if (item < current->data) {
                 current = current->left;
             }
-            else current = current->right;
+            else if(item > current->data){
+                current = current->right;
+            }
+            
+            else {
+                cout<<"Can't not insert, Duplicate items"<<endl;
+                return 0;
+            }
         }
         tmp->parent = pcurrent;
-        if (pcurrent == 0) {
+        if (!pcurrent) {
             root = tmp;
             isize++;
         }
@@ -150,18 +154,19 @@ public:
      */ // TODO
     iterator find(const Data& item) const {
         //BSTNode<Data>* BSTnode = BSTNode(item);
-        iterator it = begin();
-        while (*it != item && it.getCurr() != 0) {
-            it++;
+        
+        BSTNode<Data>* curr = root;
+        //the while loop terminates when the curr points to a null object
+        while(curr!=0 && curr->data!=item)
+        {
+            if(item < curr->data)
+                curr = curr->left;
+            else
+                curr = curr->right;
         }
         
-        if (*it == item) {
-            //cout<<"find "<<*it<<endl;
-            return it;
-        }
-        
-        else cout<<"find "<<item<<" failed"<<endl;
-        return 0;
+        return typename BST<Data>::iterator(curr);
+
     }
     
     

@@ -38,7 +38,7 @@ public:
             
         }
         tmp->parent = pcurrent;
-        if (pcurrent == 0) {
+        if (!pcurrent) {
             this->root = tmp;
             this->isize++;
         }
