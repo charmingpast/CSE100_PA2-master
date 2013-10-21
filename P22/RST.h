@@ -1,11 +1,11 @@
 //
-//  RST.h
-//  P22
+////  RST.h
+////  P22
+////
+////  Created by xiaoxiao zheng on 10/18/13.
+////  Copyright (c) 2013 xiaoxiao zheng. All rights reserved.
+////
 //
-//  Created by xiaoxiao zheng on 10/18/13.
-//  Copyright (c) 2013 xiaoxiao zheng. All rights reserved.
-//
-
 #ifndef P22_RST_h
 #define P22_RST_h
 
@@ -25,14 +25,17 @@ public:
         BSTNode<Data>* current = this->root;
         while (current != 0) {
             pcurrent = current;
-            if (item == current->data) {
-                cout<<"Can't not insert, Duplicate items"<<endl;
-                return 0;
-            }
             if (item < current->data) {
                 current = current->left;
             }
-            else current = current->right;
+            else if (item > current->data){
+                current = current->right;
+            }
+            else {
+                cout<<"Can't not insert, Duplicate items"<<endl;
+                return 0;
+            }
+            
         }
         tmp->parent = pcurrent;
         if (pcurrent == 0) {
@@ -49,21 +52,21 @@ public:
         }
         
       
-            while (pcurrent && pcurrent->priority < tmp->priority) {
-                if (tmp->isLeft()) {
-                    rightRotate(pcurrent);
-                }
-                else{
-                    leftRotate(pcurrent);
-                }
-                pcurrent = tmp->parent;
-                if (tmp->parent) {
-                    pcurrent->left = tmp->parent->left;
-                    pcurrent->right = tmp->parent->right;
-                }
-                
-
+        while (pcurrent && pcurrent->priority < tmp->priority) {
+            if (tmp->isLeft()) {
+                rightRotate(pcurrent);
             }
+            else{
+                leftRotate(pcurrent);
+            }
+            pcurrent = tmp->parent;
+            if (tmp->parent) {
+                pcurrent->left = tmp->parent->left;
+                pcurrent->right = tmp->parent->right;
+            }
+            
+
+        }
         
         return 1;
         
@@ -117,3 +120,130 @@ public:
 
 
 #endif
+
+
+//#include "BST.h"
+//#include "countint.h"
+//#include <stdlib.h>
+//#include <iostream>
+//
+//#include <cstdlib>
+//
+//
+//using namespace std;
+//
+//
+//template <typename Data>
+//class RST : public BST<Data> {
+//    
+//public:
+//    
+//    virtual bool insert(const Data& item) {
+//        // TODO: implement this function!
+//        BSTNode<Data>** curr =&this->root;
+//        BSTNode<Data>* parent = 0;
+//        
+//        while((*curr)!=0) {
+//            parent = *curr;
+//            if((*curr)->data == item)
+//            {
+//                return false;
+//            }
+//            else if(item<(*curr)->data)
+//                curr = &(*curr)->left;
+//            else
+//                curr = &(*curr)->right;
+//        }
+//        
+//        (*curr) = new BSTNode<Data>(item);
+//        (*curr)->parent = parent;
+//        (*curr)->priority = rand();
+//        
+//        this->isize++;
+//        BSTNode<Data> *c = *curr;
+//        
+//        
+//        
+//        
+//        
+//        if ((c)->parent) {
+//            
+//            while ((c)->parent && (c)->priority > (c)->parent->priority) {
+//                
+//                if ((c)->parent->right == (c)) {
+//                    //left rotation
+//                    
+//                    //if this is the node of a root's child
+//                    if ((c)->parent == this->root) {
+//                        
+//                        (c)->parent->right = (c)->left;
+//                        if(c->left!=0)
+//                            c->left->parent = c->parent;
+//                        (c)->left = (c)->parent;
+//                        (c)->parent = 0;
+//                        
+//                        (c)->left->parent = (c);
+//                        this->root = (c);
+//                    }
+//                    
+//                    else
+//                    {
+//                        
+//                        (c)->parent->right = (c)->left;
+//                        if(c->left!=0)
+//                            (c)->left->parent = (c)->parent;
+//                        (c)->left = (c)->parent;
+//                        
+//                        (c)->parent = (c)->left->parent;
+//                        (c)->left->parent = (c);
+//                        
+//                        
+//                        if((c)->parent->left == (c)->left)
+//                            (c)->parent->left = (c);
+//                        else
+//                            (c)->parent->right = (c);
+//                    }
+//                }
+//                
+//                else
+//                {
+//                    if ((c)->parent == this->root) {
+//                        (c)->parent->left = (c)->right;
+//                        if(c->right!=0)
+//                            c->right->parent = c->parent;
+//                        
+//                        (c)->right = (c)->parent;
+//                        (c)->parent = 0;
+//                        
+//                        (c)->right->parent = (c);
+//                        this->root = (c);    
+//                    }
+//                    
+//                    else 
+//                    {
+//                        
+//                        (c)->parent->left = (c)->right;
+//                        if(c->right!=0)
+//                            (c)->right->parent = (c)->parent;
+//                        (c)->right = (c)->parent;
+//                        
+//                        (c)->parent = (c)->right->parent;
+//                        (c)->right->parent = (c);
+//                        
+//                        
+//                        if((c)->parent->right == (c)->right)
+//                            (c)->parent->right = (c);
+//                        else  
+//                            (c)->parent->left = (c);
+//                    }
+//                    
+//                    
+//                }
+//            }
+//        }
+//        
+//        
+//        return true;
+//    }
+
+//};
