@@ -157,7 +157,7 @@ public:
         
         BSTNode<Data>* curr = root;
         //the while loop terminates when the curr points to a null object
-        while(curr!=0 && curr->data!=item)
+        while(curr && curr->data!=item)
         {
             if(item < curr->data)
                 curr = curr->left;

@@ -59,19 +59,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "bst"
+            argument = "rst"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "sorted"
+            argument = "shuffled"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "32768"
+            argument = "10000"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "5"
+            argument = "2"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

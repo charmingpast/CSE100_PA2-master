@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1BC9598D-AECE-4679-A6F3-281C22584DAF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>P22</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>47E7A798-E82A-4EED-963C-A796C74B2D63</key>
+		<string>https://github.com/charmingpast/CSE100_PA2-master.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>P22.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>47E7A798-E82A-4EED-963C-A796C74B2D63</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/charmingpast/CSE100_PA2-master.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>47E7A798-E82A-4EED-963C-A796C74B2D63</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47E7A798-E82A-4EED-963C-A796C74B2D63</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CSE100_PA2-master</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -23,15 +23,14 @@ vector<int> getSizes(int size)
     std::vector<int>::iterator it;
     it = sizes.begin();
     int i = 1;
-    int j = 1;
+    int j = 0;
     
-    while (i < size)
+    while (i <= (size + 1) / 2)
     {
-        sizes.insert(sizes.end(),i);
         j++;
         i = (int(pow(2.0,j))) - 1;
-        
-        cout<<"Sizes "<<i<<endl;
+        sizes.insert(sizes.end(),i);
+
     }
     return sizes;
 }
@@ -87,10 +86,10 @@ int main(int argc, char* argv[])
         unsigned long count = 0;
         for (int i = 0 ; i < runs; i++) {
             v.clear();
-            for (int j = 0; j <= *it ; j++) {
+            for (int j = 0; j < *it ; j++) {
                 v.push_back(j);
             }
-            //cout<<"*it"<<*it<<endl;
+            
             if (shuffled) {
                 std::random_shuffle(v.begin(),v.end());
             }
@@ -109,12 +108,13 @@ int main(int argc, char* argv[])
                 }
                 count = countint::getcount();
             }
-            if (string(argv[1]).compare("rst") == 0) {
+            else if (string(argv[1]).compare("rst") == 0) {
                 RST<countint> r = RST<countint>();
                 for (vit = v.begin(); vit != ven; ++vit) {
                     r.insert(*vit);
                 }
                 countint::clearcount();
+                
                 for(vit = v.begin(); vit != ven; ++vit) {
                     r.find(*vit);
                 }

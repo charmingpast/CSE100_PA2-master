@@ -41,6 +41,7 @@ public:
         if (!pcurrent) {
             this->root = tmp;
             this->isize++;
+            return 1;
         }
         else if (item < pcurrent->data){
             pcurrent->left = tmp;
@@ -50,6 +51,7 @@ public:
             pcurrent->right = tmp;
             this->isize++;
         }
+        
         
       
         while (pcurrent && pcurrent->priority < tmp->priority) {
